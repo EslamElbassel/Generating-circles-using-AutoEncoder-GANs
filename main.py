@@ -38,7 +38,7 @@ autoencoder.fit(train_X, train_X, batch_size=256, epochs=300)
 encodeder_output = encoder.predict(test_X)
 decoder_output = decoder.predict(encodeder_output)
 
-# Visualize the reconstructed circle against their original circle
+# _____Visualize the reconstructed circle against their original circle_____
 
 print("Max value", points.max().max())  # maximum  point value
 n = 5  # number of circles
@@ -62,6 +62,6 @@ for i in range(n):
 
 plt.show()
 
-# Calculate the error(MSE)
+# _____Calculate the error(MSE)_____
 print(autoencoder.evaluate(decoder_output, test_X))
 print("MSE: ", mean_squared_error(test_X, decoder_output))

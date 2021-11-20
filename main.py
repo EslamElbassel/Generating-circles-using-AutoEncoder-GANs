@@ -35,8 +35,8 @@ autoencoder.compile(loss='mean_squared_error', optimizer='adam')
 autoencoder.fit(train_X, train_X, batch_size=256, epochs=300)
 
 # Decode and Encode unseen circle points(testing the models)
-encodeder_output = encoder.predict(test_X)
-decoder_output = decoder.predict(encodeder_output)
+encoder_output = encoder.predict(test_X)
+decoder_output = decoder.predict(encoder_output)
 
 # _____Visualize the reconstructed circle against their original circle_____
 
